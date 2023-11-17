@@ -1,11 +1,13 @@
 import { DropdownList } from "./DropdownList";
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 export const Dropdown = (props) => {
   const { list } = props;
-  const [state, setState] = useState('open');
+  const [state, setState] = useState('');
 
   const toggleOpen = (e) => {
+    setState('open');
     e.target.closest('.dropdown-wrapper').classList.toggle(state);    
   }
 
@@ -19,3 +21,7 @@ export const Dropdown = (props) => {
     </div>    
   );
 }
+
+Dropdown.propTypes = {
+  list: PropTypes.array  
+};

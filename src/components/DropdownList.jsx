@@ -1,4 +1,5 @@
 import { DropdownItem } from "./DropdownItem";
+import PropTypes from 'prop-types';
 
 export const DropdownList = (props) => {
   const { list } = props;
@@ -19,3 +20,7 @@ export const DropdownList = (props) => {
     </ul>
   );
 }
+
+DropdownList.propTypes = {
+  list: PropTypes.array  
+};
